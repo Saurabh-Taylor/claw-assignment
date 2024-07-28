@@ -5,6 +5,7 @@
  - read todo
  - update todo
  - delete todo
+ - retrieve user login , logout , ip address sessions
 
 ## Tech Stack 
 
@@ -16,6 +17,7 @@
 ### Frontend
 - React.js (For building the UI)
 - Redux (For state management)
+- Tanstack query (for efficient data caching , refetch the data automatically when it is needed)
 
 
 

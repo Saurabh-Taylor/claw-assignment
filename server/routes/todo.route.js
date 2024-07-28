@@ -1,5 +1,6 @@
 import express from "express";
 import { getAllTodos , createTodo ,deleteTodo ,updateTodo } from "../controllers/todo.controller.js";
+import { isLoggedIn } from "../middlewares/auth.middleware.js";
 
 
 
@@ -9,15 +10,11 @@ const router = express.Router()
 
 
 router.route('/')
-    .get(getAllTodos)
-    .post(createTodo)
+    .get(isLoggedIn,getAllTodos)
+    .post(isLoggedIn,createTodo)
 
 router.route('/:id')
-    .put(updateTodo)
-    .delete(deleteTodo)
-
-
-
-
+    .put(isLoggedIn,updateTodo)
+    .delete(isLoggedIn,deleteTodo)
 
 export default router
