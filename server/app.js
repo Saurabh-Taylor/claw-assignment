@@ -11,8 +11,11 @@ config()
 const app = express()
 
 const corsOptions = {
-    origin: 'http://localhost:5173', // Replace with your frontend's URL
-    credentials: true, // Allow credentials (cookies, authorization headers)
+    origin: [
+        'http://localhost:5173',
+        process.env.FE_URL
+    ]  ,
+    credentials: true, 
   };
 
 //built in middlewares

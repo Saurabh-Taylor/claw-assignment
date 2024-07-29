@@ -6,6 +6,7 @@ export const isLoggedIn = async (req, res, next) => {
     // Extract token and sessionId
     const token = getToken(req);
     const sessionId = getSessionId(req);
+    console.log(token);
 
 
     if (!token) {

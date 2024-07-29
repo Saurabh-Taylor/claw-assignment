@@ -44,7 +44,6 @@ const UserSessions = () => {
                 <th>Login Time</th>
                 <th>ip address</th>
                 <th>Logout Time</th>
-                <th>Duration</th>
               </tr>
             </thead>
             <tbody>
