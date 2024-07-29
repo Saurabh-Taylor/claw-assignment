@@ -10,11 +10,16 @@ config()
 
 const app = express()
 
+const corsOptions = {
+    origin: 'http://localhost:5173', // Replace with your frontend's URL
+    credentials: true, // Allow credentials (cookies, authorization headers)
+  };
 
 //built in middlewares
 app.use(express.json({limit:"16kb"})) // for getting the json data (req.body)
 app.use(cookieParser()) // for parsing the cookies
 app.use(morgan('dev'))
+app.use(cors(corsOptions))
 
 
 

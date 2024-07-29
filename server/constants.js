@@ -1,7 +1,7 @@
 import User from "./models/user.model.js";
 
 export const cookieOptions = {
-    maxAge: 7 * 24 * 60 * 60 * 1000, // 24 hours
+    maxAge:   60 * 60 * 1000, // 1 hour
     httpOnly: true,
 }
 
