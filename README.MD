@@ -7,10 +7,13 @@ There are still one issue on frontend which is cookie and token when it is reque
 
 **TODO-APP** is a project that aims to create todo , update todo , delete todo , get sessions . Whether it's a web application, API service, or a different type of software.
 
-## API Documentation 
-```
-https://documenter.getpostman.com/view/24036000/2sA3kaDedE
-```
+## API Documentation for localHost
+[localhost postman docs](https://documenter.getpostman.com/view/24036000/2sA3kaDfEX)
+
+## API Documentation for BE 
+[BE deployed URL docs](https://documenter.getpostman.com/view/24036000/2sA3kaDedE) 
+
+
 ## Deployed BE 
 ```
 https://claw-assignment-task-1.onrender.com/

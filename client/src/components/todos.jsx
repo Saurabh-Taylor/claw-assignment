@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import { AddNewTodo } from "./index";
 
 const Todos = () => {
+
   const queryClient = useQueryClient();
   const [editingTodo, setEditingTodo] = useState(null);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -19,10 +20,10 @@ const Todos = () => {
       }
       return response.data;
     },
-    retry: 1, // Retry once before showing error
+    retry: 1,
     staleTime: 0,
     cacheTime: 0,
-    refetchOnMount: true,
+    // refetchOnMount: true,
   });
 
   const updateTodoMutation = useMutation({
@@ -50,9 +51,14 @@ const Todos = () => {
   const deleteTodoMutation = useMutation({
     mutationFn: async (id) => {
       const response = await axiosInstance.delete(`/todos/${id}`);
+      console.log(response.data);
       return response.data;
     },
-    onSuccess: () => {
+    onSuccess: (data, deletedId) => {
+      queryClient.setQueryData(["todos"], (oldData) => ({
+        ...oldData,
+        data: oldData.data.filter(todo => todo._id !== deletedId)
+      }));
       queryClient.invalidateQueries(["todos"]);
     }
   });
@@ -86,9 +92,7 @@ const Todos = () => {
   };
 
   const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this todo?")) {
       deleteTodoMutation.mutate(id);
-    }
   };
 
   if (isLoading) return <div className="flex justify-center items-center h-screen"><span className="loading loading-spinner loading-lg"></span></div>;
