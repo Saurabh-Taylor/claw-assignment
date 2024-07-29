@@ -1,5 +1,3 @@
----
-
 # Project Name - Claw Assignment- Task 1
 
 ## Note
@@ -115,8 +113,3 @@ Follow these steps to set up and run the project locally:
 
 3. **Unit and Integration Tests:**
    - Increase test coverage to ensure the reliability and stability of the application.
-
-
-
----
-
