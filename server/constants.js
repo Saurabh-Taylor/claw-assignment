@@ -3,7 +3,8 @@ import User from "./models/user.model.js";
 export const cookieOptions = {
     maxAge:   60 * 60 * 1000, // 1 hour
     httpOnly: true,
-    sameSite: 'None'
+    // sameSite: 'None',
+    // secure:true
 }
 
 export async function loginUser(userId, ipAddress) {

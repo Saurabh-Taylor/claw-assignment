@@ -54,7 +54,7 @@ const UserSessions = () => {
                  <tr key={id}>
                  <td>{newloginTime}</td>
                  <td>{ipAddress}</td>
-                 <td>{logoutTime || "NA"}</td>
+                 <td>{convertToIST(logoutTime) || "NA"}</td>
                </tr>
                </>
               })}

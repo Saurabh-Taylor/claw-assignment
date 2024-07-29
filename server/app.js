@@ -10,11 +10,11 @@ config()
 
 const app = express()
 
-const corsOptions = {
-    origin: [
-        'http://localhost:5173',
-        process.env.FE_URL
-    ]  ,
+
+// checked out both  frontend and backend , but i cant figure whats the problem
+const corsOptions = { 
+    
+    origin: ['http://localhost:5173' , process.env.FE_URL] ,
     credentials: true, 
   };
 
